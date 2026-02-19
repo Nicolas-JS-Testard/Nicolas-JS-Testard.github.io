@@ -1,12 +1,182 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
-  <title>Ma page perso</title>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nicolas Testard — CV</title>
+
+  <!-- Icons (email/phone) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --ink:#111;
+      --muted:#555;
+      --rule:#d9d9d9;
+      --bg:#fff;
+      --max: 980px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); }
+    body{ font-family: ui-serif, Georgia, "Times New Roman", Times, serif; line-height:1.35; }
+
+    /* Page layout */
+    .page{ max-width:var(--max); margin:0 auto; padding:28px 18px 40px; }
+    header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items:end;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .name{
+      font-size: 40px;
+      letter-spacing: .5px;
+      margin:0;
+      line-height:1.05;
+    }
+    .addr{ margin:6px 0 0; color:var(--muted); font-size:14px; }
+
+    .photo-wrap{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .photo{
+      width:96px; height:96px;
+      border-radius: 10px;
+      object-fit: cover;
+      border:1px solid var(--rule);
+    }
+
+    .contact{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:14px;
+      text-align:right;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .contact a{ color:inherit; text-decoration:none; }
+    .contact a:hover{ text-decoration:underline; }
+    .contact i{ width:18px; text-align:center; margin-right:8px; color:var(--ink); }
+
+    /* Sections */
+    section{ margin:18px 0; }
+    h2{
+      font-size: 15px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin:18px 0 10px;
+      padding-top: 4px;
+    }
+    .rule{ height:1px; background:var(--rule); margin:10px 0 0; }
+
+    ul{ margin: 8px 0 0 18px; padding:0; }
+    li{ margin: 7px 0; }
+
+    /* Entry cards */
+    .entry{
+      margin: 10px 0 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .entry:last-child{ border-bottom:none; padding-bottom:0; }
+
+    .entry-head{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .entry-title{ font-weight:700; }
+    .entry-date{ font-weight:700; }
+    .entry-sub{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      margin-top: 2px;
+      font-style: italic;
+    }
+    .entry-body{ margin-top: 6px; }
+
+    /* Publications */
+    .pubs h3{
+      margin: 14px 0 6px;
+      font-size: 16px;
+    }
+    .pub{
+      padding:10px 0;
+      border-bottom:1px solid var(--rule);
+    }
+    .pub:last-child{ border-bottom:none; }
+    .pub .title{ font-weight:700; }
+    .pub .meta{ color:var(--muted); margin-top:2px; }
+    .pub a{ color:var(--ink); }
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      padding:2px 8px;
+      border:1px solid var(--rule);
+      border-radius:999px;
+      margin-left:8px;
+      color:var(--muted);
+    }
+
+    /* Print-friendly */
+    @media print{
+      .page{ padding:0; }
+      a{ text-decoration:none; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Bienvenue sur mon site</h1>
-  <p>Je m'appelle [Ton prénom].</p>
-  <p>Ceci est ma première page web 🎉</p>
-</body>
-</html>
+  <main class="page">
+    <header>
+      <div>
+        <h1 class="name">Nicolas <span style="font-weight:700;">Testard</span></h1>
+        <p class="addr">28 rue Bonnat, 31400, Toulouse</p>
+      </div>
+
+      <div class="photo-wrap">
+        <!-- Mets pdp.jpg dans le repo -->
+        <img class="photo" src="pdp.jpg" alt="Photo de Nicolas Testard" />
+        <div class="contact">
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:nicolas.testard@lirmm.fr">nicolas.testard@lirmm.fr</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-mobile-screen"></i>
+            <a href="tel:+33637457854">+33 (0)6 37 45 78 54</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <div class="rule"></div>
+
+      <ul>
+        <li><strong>October 2, 2024</strong> : PhD degree in Robotics,
+          <em>École doctorale Sciences de l'Ingénierie et des Systèmes</em>,
+          <em>École Centrale de Nantes</em> (started on September 1, 2021)</li>
+        <li><strong>2021</strong> : Magistère degree in Mechatronics, <em>École Normale Supérieure de Rennes</em></li>
+        <li><strong>2021</strong> : Master degree CoRo IMARO (Control and Robotics), <em>École Centrale de Nantes</em></li>
+        <li><strong>2020</strong> : French Agrégation in Industrial Sciences, Electrical Engineering option</li>
+        <li><strong>2020</strong> : Master degree ISC (Complex System Engineering), with honors “Très Bien”,
+          <em>Université de Rennes 1, École Normale Supérieure de Rennes</em></li>
+        <li><strong>2018</strong> : Bachelor’s degree EEEA (Electronique, Electrical Energy, Automatic), with honors “Bien”,
+          and Bachelor’s degree SPI (Sciences Pour l'Ingénieur), with honors “Bien”, <em>Université de Rennes 1</em></li>
+        <li><strong>2017</strong> : Appointment at École Normale Supérieure de Rennes, Mechatronics department, as a trainee civil servant</li>
+        <li><strong>2015–2017</strong> : Preparatory classes for French engineering
