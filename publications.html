@@ -1,30 +1,926 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Publications | Nicolas J. S. Testard</title>
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>
+    Publications | Nicolas J. S. Testard
+  </title>
+
+  <meta
+    name="description"
+    content="Scientific publications of Nicolas J. S. Testard."
+  >
 
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
+<!-- ======================================================
+     NAVIGATION
+     ====================================================== -->
+
 <nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="education.html">Education</a>
-  <a href="experience.html">Experience</a>
-  <a class="active" href="publications.html">Publications</a>
+
+  <a href="index.html">
+    Home
+  </a>
+
+  <a href="education.html">
+    Education
+  </a>
+
+  <a href="experience.html">
+    Experience
+  </a>
+
+  <a class="active"
+     href="publications.html">
+    Publications
+  </a>
+
 </nav>
 
-<main class="page">
+
+
+<!-- ======================================================
+     PAGE
+     ====================================================== -->
+
+<main class="page pubs">
 
   <h1>Publications</h1>
 
-  <!-- colle ici ta bibliographie actuelle -->
+  <p id="hal-status">
+    Loading publications from HAL...
+  </p>
+
+  <div id="hal-publications"></div>
 
 </main>
 
+
+
+<script>
+
+/* =========================================================
+   HAL API
+   ========================================================= */
+
+const HAL_API =
+  "https://api.archives-ouvertes.fr/search/";
+
+
+
+/* =========================================================
+   AUTHOR
+   ========================================================= */
+
+const authorQuery = [
+
+  'authFullName_s:"Nicolas J.S. Testard"',
+
+  'authFullName_s:"Nicolas J S Testard"',
+
+  'authFullName_s:"Nicolas J. S. Testard"',
+
+  'authFullName_s:"Nicolas Testard"'
+
+].join(" OR ");
+
+
+
+/* =========================================================
+   FIELDS RETRIEVED FROM HAL
+   ========================================================= */
+
+const fields = [
+
+  "title_s",
+
+  "authFullName_s",
+
+  "docType_s",
+
+  "journalTitle_s",
+
+  "conferenceTitle_s",
+
+  "bookTitle_s",
+
+  "producedDateY_i",
+
+  "volume_s",
+
+  "issue_s",
+
+  "page_s",
+
+  "uri_s",
+
+  "doiId_s",
+
+  "halId_s",
+
+  /* Used to distinguish
+     international / national conferences */
+  "audience_s"
+
+].join(",");
+
+
+
+/* =========================================================
+   API REQUEST
+   ========================================================= */
+
+const params = new URLSearchParams({
+
+  q: `(${authorQuery})`,
+
+  fl: fields,
+
+  rows: "100",
+
+  sort: "producedDateY_i desc",
+
+  wt: "json"
+
+});
+
+
+const url =
+  `${HAL_API}?${params.toString()}`;
+
+
+const status =
+  document.getElementById("hal-status");
+
+
+const container =
+  document.getElementById("hal-publications");
+
+
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+
+function first(value) {
+
+  if (Array.isArray(value)) {
+
+    return value[0];
+
+  }
+
+  return value;
+
+}
+
+
+
+function escapeHTML(value = "") {
+
+  return String(value)
+
+    .replaceAll("&", "&amp;")
+
+    .replaceAll("<", "&lt;")
+
+    .replaceAll(">", "&gt;")
+
+    .replaceAll('"', "&quot;")
+
+    .replaceAll("'", "&#039;");
+
+}
+
+
+
+/* =========================================================
+   IDENTIFY MY NAME
+   ========================================================= */
+
+function isMe(name) {
+
+  const normalized =
+    String(name)
+
+      .toLowerCase()
+
+      .replaceAll(".", "")
+
+      .replace(/\s+/g, " ")
+
+      .trim();
+
+
+  return (
+
+    normalized.includes("testard")
+
+    &&
+
+    (
+      normalized.includes("nicolas")
+      ||
+      normalized.startsWith("n ")
+    )
+
+  );
+
+}
+
+
+
+/* =========================================================
+   FORMAT AUTHORS
+   ========================================================= */
+
+function formatAuthors(authors = []) {
+
+  if (!Array.isArray(authors)) {
+
+    authors = [authors];
+
+  }
+
+
+  return authors
+
+    .map(author => {
+
+      const safeAuthor =
+        escapeHTML(author);
+
+
+      if (isMe(author)) {
+
+        return `<strong>${safeAuthor}</strong>`;
+
+      }
+
+
+      return safeAuthor;
+
+    })
+
+    .join(", ");
+
+}
+
+
+
+/* =========================================================
+   JOURNAL / CONFERENCE NAME
+   ========================================================= */
+
+function getVenue(doc) {
+
+  return (
+
+    first(doc.journalTitle_s)
+
+    ||
+
+    first(doc.conferenceTitle_s)
+
+    ||
+
+    first(doc.bookTitle_s)
+
+    ||
+
+    ""
+
+  );
+
+}
+
+
+
+/* =========================================================
+   IEEE-LIKE REFERENCE
+   ========================================================= */
+
+function formatReference(doc) {
+
+  const authors =
+    formatAuthors(
+      doc.authFullName_s || []
+    );
+
+
+  const title =
+    escapeHTML(
+      first(doc.title_s)
+      || "Untitled"
+    );
+
+
+  const venue =
+    escapeHTML(
+      getVenue(doc)
+    );
+
+
+  const year =
+    escapeHTML(
+      doc.producedDateY_i || ""
+    );
+
+
+  const volume =
+    escapeHTML(
+      first(doc.volume_s) || ""
+    );
+
+
+  const issue =
+    escapeHTML(
+      first(doc.issue_s) || ""
+    );
+
+
+  const pages =
+    escapeHTML(
+      first(doc.page_s) || ""
+    );
+
+
+  const halURL =
+    escapeHTML(
+      first(doc.uri_s) || ""
+    );
+
+
+  const doi =
+    escapeHTML(
+      first(doc.doiId_s) || ""
+    );
+
+
+  /* -------------------------------------------------------
+     Main reference
+     ------------------------------------------------------- */
+
+  let reference =
+    `${authors}, “${title},”`;
+
+
+  if (venue) {
+
+    reference +=
+      ` <em>${venue}</em>`;
+
+  }
+
+
+  if (volume) {
+
+    reference +=
+      `, vol. ${volume}`;
+
+  }
+
+
+  if (issue) {
+
+    reference +=
+      `, no. ${issue}`;
+
+  }
+
+
+  if (pages) {
+
+    const pageLabel =
+
+      pages.includes("-")
+      ||
+      pages.includes("–")
+
+      ? "pp."
+
+      : "p.";
+
+
+    reference +=
+      `, ${pageLabel} ${pages}`;
+
+  }
+
+
+  if (year) {
+
+    reference +=
+      `, ${year}`;
+
+  }
+
+
+  reference += ".";
+
+
+
+  /* -------------------------------------------------------
+     Links
+     ------------------------------------------------------- */
+
+  const links = [];
+
+
+  if (halURL) {
+
+    links.push(`
+
+      <a
+        class="link"
+        href="${halURL}"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        HAL
+
+      </a>
+
+    `);
+
+  }
+
+
+  if (doi) {
+
+    links.push(`
+
+      <a
+        class="link"
+        href="https://doi.org/${encodeURI(doi)}"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        DOI
+
+      </a>
+
+    `);
+
+  }
+
+
+  return `
+
+    ${reference}
+
+    ${links.join(" ")}
+
+  `;
+
+}
+
+
+
+/* =========================================================
+   DOCUMENT CLASSIFICATION
+   ========================================================= */
+
+function getGroup(doc) {
+
+  const type =
+    first(doc.docType_s) || "";
+
+
+  const audience =
+    String(
+      first(doc.audience_s) || ""
+    );
+
+
+  /* -------------------------------------------------------
+     JOURNAL ARTICLES
+     ------------------------------------------------------- */
+
+  if (type === "ART") {
+
+    return "journals";
+
+  }
+
+
+
+  /* -------------------------------------------------------
+     CONFERENCE PAPERS
+
+     HAL:
+       audience = 2
+       -> international
+
+       audience = 0, 1 or 3
+       -> national
+     ------------------------------------------------------- */
+
+  if (
+    type === "COMM"
+    ||
+    type === "POSTER"
+  ) {
+
+    if (audience === "2") {
+
+      return "internationalConferences";
+
+    }
+
+
+    if (
+      audience === "0"
+      ||
+      audience === "1"
+      ||
+      audience === "3"
+    ) {
+
+      return "nationalConferences";
+
+    }
+
+
+    /*
+      If HAL does not contain
+      audience information,
+      do not guess.
+    */
+
+    return "unclassifiedConferences";
+
+  }
+
+
+
+  /* -------------------------------------------------------
+     THESES
+
+     THESE = PhD thesis
+     MEM   = Master's thesis / dissertation
+     HDR   = Habilitation
+     ------------------------------------------------------- */
+
+  if (
+    type === "THESE"
+    ||
+    type === "MEM"
+    ||
+    type === "HDR"
+  ) {
+
+    return "theses";
+
+  }
+
+
+
+  /* -------------------------------------------------------
+     TECHNICAL / RESEARCH REPORTS
+     ------------------------------------------------------- */
+
+  if (type === "REPORT") {
+
+    return "reports";
+
+  }
+
+
+
+  /* -------------------------------------------------------
+     OTHER DOCUMENTS
+     ------------------------------------------------------- */
+
+  return "other";
+
+}
+
+
+
+/* =========================================================
+   DISPLAY SECTION
+   ========================================================= */
+
+function renderSection(
+  title,
+  documents
+) {
+
+  if (documents.length === 0) {
+
+    return "";
+
+  }
+
+
+  const items = documents
+
+    .map(doc => `
+
+      <li>
+
+        ${formatReference(doc)}
+
+      </li>
+
+    `)
+
+    .join("");
+
+
+  return `
+
+    <section>
+
+      <h3>
+        ${escapeHTML(title)}
+      </h3>
+
+      <ol class="bib">
+
+        ${items}
+
+      </ol>
+
+    </section>
+
+  `;
+
+}
+
+
+
+/* =========================================================
+   LOAD DATA FROM HAL
+   ========================================================= */
+
+fetch(url, {
+
+  /*
+    Avoid keeping an old
+    publication list in cache.
+  */
+
+  cache: "no-store"
+
+})
+
+
+.then(response => {
+
+
+  if (!response.ok) {
+
+    throw new Error(
+      `HAL API error: ${response.status}`
+    );
+
+  }
+
+
+  return response.json();
+
+})
+
+
+.then(data => {
+
+
+  const documents =
+    data?.response?.docs || [];
+
+
+
+  /* =======================================================
+     REMOVE DUPLICATES
+     ======================================================= */
+
+  const seen =
+    new Set();
+
+
+  const uniqueDocuments =
+    documents.filter(doc => {
+
+
+      const key =
+
+        first(doc.halId_s)
+
+        ||
+
+        first(doc.uri_s)
+
+        ||
+
+        first(doc.title_s);
+
+
+      if (!key) {
+
+        return false;
+
+      }
+
+
+      if (seen.has(key)) {
+
+        return false;
+
+      }
+
+
+      seen.add(key);
+
+
+      return true;
+
+    });
+
+
+
+  /* =======================================================
+     GROUPS
+     ======================================================= */
+
+  const groups = {
+
+    journals: [],
+
+    internationalConferences: [],
+
+    nationalConferences: [],
+
+    unclassifiedConferences: [],
+
+    theses: [],
+
+    reports: [],
+
+    other: []
+
+  };
+
+
+
+  /* =======================================================
+     CLASSIFY
+     ======================================================= */
+
+  uniqueDocuments.forEach(doc => {
+
+    const group =
+      getGroup(doc);
+
+
+    groups[group].push(doc);
+
+  });
+
+
+
+  /* =======================================================
+     DISPLAY
+     ======================================================= */
+
+  container.innerHTML = [
+
+
+    renderSection(
+
+      "International Journal Articles",
+
+      groups.journals
+
+    ),
+
+
+
+    renderSection(
+
+      "International Conference Papers",
+
+      groups.internationalConferences
+
+    ),
+
+
+
+    renderSection(
+
+      "National Conference Papers",
+
+      groups.nationalConferences
+
+    ),
+
+
+
+    /*
+      This section only appears
+      if HAL has a conference without
+      national/international information.
+    */
+
+    renderSection(
+
+      "Other Conference Papers",
+
+      groups.unclassifiedConferences
+
+    ),
+
+
+
+    renderSection(
+
+      "Theses",
+
+      groups.theses
+
+    ),
+
+
+
+    renderSection(
+
+      "Technical and Research Reports",
+
+      groups.reports
+
+    ),
+
+
+
+    renderSection(
+
+      "Other Publications",
+
+      groups.other
+
+    )
+
+
+  ].join("");
+
+
+
+  /* =======================================================
+     STATUS
+     ======================================================= */
+
+  status.textContent =
+
+    `${uniqueDocuments.length} publication${
+      uniqueDocuments.length > 1
+        ? "s"
+        : ""
+    } retrieved from HAL.`;
+
+})
+
+
+.catch(error => {
+
+
+  console.error(error);
+
+
+  status.innerHTML = `
+
+    Unable to load publications from HAL.
+
+    <a
+      href="https://hal.science/search/index/?q=Nicolas+Testard"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      Open HAL
+
+    </a>
+
+  `;
+
+});
+
+
+</script>
+
+
 </body>
+
 </html>
