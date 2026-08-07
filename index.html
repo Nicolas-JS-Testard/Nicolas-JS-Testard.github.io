@@ -1,443 +1,79 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="cUueUEb_qTwGjRv1SFsJkllWTmkQsOdqB4JiwnOtp4Y" />
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Nicolas J. S. Testard | Robotics Researcher</title>
 
- <meta name="description" content="Nicolas J. S. Testard – Researcher in robotics. Control of tendon-driven and cable-driven robots. Publications, CV and research projects.">
+  <meta name="description"
+        content="Nicolas J. S. Testard – Robotics researcher working on cable-driven, tendon-driven and bio-inspired robots.">
 
- <meta name="author" content="Nicolas J. S. Testard">
-
- <meta name="keywords" content="Nicolas Testard, Nicolas J. S. Testard, Nicolas J.S. Testard, robotics, tendon-driven robot, cable-driven robot, LIRMM, LS2N, research, control">
-
- <meta name="robots" content="index, follow">
-  <!-- Icons (email/phone) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    :root{
-      --ink:#111;
-      --muted:#555;
-      --rule:#d9d9d9;
-      --bg:#fff;
-      --max: 980px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); }
-    body{ font-family: ui-serif, Georgia, "Times New Roman", Times, serif; line-height:1.35; }
-
-    /* Page layout */
-    .page{ max-width:var(--max); margin:0 auto; padding:28px 18px 40px; }
-    header{
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items:end;
-      border-bottom: 2px solid var(--ink);
-      padding-bottom: 12px;
-      margin-bottom: 18px;
-    }
-    .name{
-      font-size: 40px;
-      letter-spacing: .5px;
-      margin:0;
-      line-height:1.05;
-    }
-    .addr{ margin:6px 0 0; color:var(--muted); font-size:14px; }
-
-    .photo-wrap{
-      display:flex;
-      gap:14px;
-      align-items:center;
-      justify-content:flex-end;
-    }
-    .photo{
-      width:96px; height:96px;
-      border-radius: 10px;
-      object-fit: cover;
-      border:1px solid var(--rule);
-    }
-
-    .contact{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      font-size:14px;
-      text-align:right;
-      color:var(--muted);
-      white-space:nowrap;
-    }
-    .contact a{ color:inherit; text-decoration:none; }
-    .contact a:hover{ text-decoration:underline; }
-    .contact i{ width:18px; text-align:center; margin-right:8px; color:var(--ink); }
-
-    /* Sections */
-    section{ margin:18px 0; }
-    h2{
-      font-size: 15px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      margin:18px 0 10px;
-      padding-top: 4px;
-    }
-    .rule{ height:1px; background:var(--rule); margin:10px 0 0; }
-
-    ul{ margin: 8px 0 0 18px; padding:0; }
-    li{ margin: 7px 0; }
-
-    /* Entry cards */
-    .entry{
-      margin: 10px 0 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .entry:last-child{ border-bottom:none; padding-bottom:0; }
-
-    .entry-head{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .entry-title{ font-weight:700; }
-    .entry-date{ font-weight:700; }
-    .entry-sub{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      margin-top: 2px;
-      font-style: italic;
-    }
-    .entry-body{ margin-top: 6px; }
-
-    /* Publications */
-    .pubs h3{
-      margin: 14px 0 6px;
-      font-size: 16px;
-    }
-    .pub{
-      padding:10px 0;
-      border-bottom:1px solid var(--rule);
-    }
-    .pub:last-child{ border-bottom:none; }
-    .pub .title{ font-weight:700; }
-    .pub .meta{ color:var(--muted); margin-top:2px; }
-    .pub a{ color:var(--ink); }
-    .badge{
-      display:inline-block;
-      font-size:12px;
-      padding:2px 8px;
-      border:1px solid var(--rule);
-      border-radius:999px;
-      margin-left:8px;
-      color:var(--muted);
-    }
-
-    /* Print-friendly */
-    @media print{
-      .page{ padding:0; }
-      a{ text-decoration:none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-  <main class="page">
-    <header>
-  <div>
-    <h1 class="name">Nicolas <span style="font-weight:700;"> J. S. Testard</span></h1>
 
-    <p style="margin:6px 0 0; font-size:15px;">
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:nicolas.testard@lirmm.fr" style="color:inherit; text-decoration:none;">
-        nicolas.testard@lirmm.fr
-      </a>
+<nav class="navbar">
+  <a class="active" href="index.html">Home</a>
+  <a href="education.html">Education</a>
+  <a href="experience.html">Experience</a>
+  <a href="publications.html">Publications</a>
+</nav>
+
+<main class="page">
+
+  <header class="hero">
+
+    <div>
+      <h1>Nicolas J. S. Testard</h1>
+
+      <p class="subtitle">
+        Robotics Researcher
+      </p>
+
+      <p>
+        <a href="mailto:nicolas.testard@lirmm.fr">
+          nicolas.testard@lirmm.fr
+        </a>
+      </p>
+    </div>
+
+    <img class="photo" src="pdp.jpg"
+         alt="Nicolas Testard">
+
+  </header>
+
+  <section>
+    <h2>About me</h2>
+
+    <p>
+      I am a researcher in robotics interested in the modeling,
+      design and control of cable-driven, tendon-driven and
+      bio-inspired robotic systems.
     </p>
-  </div>
+  </section>
 
-  <div class="photo-wrap">
-    <img class="photo" src="pdp.jpg" alt="Photo de Nicolas Testard" />
-  </div>
-</header>
+  <section class="cards">
 
-    <!-- EDUCATION -->
-    <section>
-      <h2>Education</h2>
-      <div class="rule"></div>
+    <a class="card" href="education.html">
+      <h3>Education</h3>
+      <p>Academic background and degrees.</p>
+    </a>
 
-      <ul>
-        <li><strong>October 2, 2024</strong> : PhD degree in Robotics,
-          <em>École doctorale Sciences de l'Ingénierie et des Systèmes</em>,
-          <em>École Centrale de Nantes</em> (started on September 1, 2021)</li>
-        <li><strong>2021</strong> : Magistère degree in Mechatronics, <em>École Normale Supérieure de Rennes</em></li>
-        <li><strong>2021</strong> : Master degree CoRo IMARO (Control and Robotics), <em>École Centrale de Nantes</em></li>
-        <li><strong>2020</strong> : French Agrégation in Industrial Sciences, Electrical Engineering option</li>
-        <li><strong>2020</strong> : Master degree ISC (Complex System Engineering), with honors “Très Bien”,
-          <em>Université de Rennes 1, École Normale Supérieure de Rennes</em></li>
-        <li><strong>2018</strong> : Bachelor’s degree EEEA (Electronique, Electrical Energy, Automatic), with honors “Bien”,
-          and Bachelor’s degree SPI (Sciences Pour l'Ingénieur), with honors “Bien”, <em>Université de Rennes 1</em></li>
-        <li><strong>2017</strong> : Appointment at École Normale Supérieure de Rennes, Mechatronics department, as a trainee civil servant</li>
-        <li><strong>2015–2017</strong> : Preparatory classes for French engineering schools (PCSI–PSI), <em>Lycée Hoche, Versailles</em></li>
-        <li><strong>2015</strong> : Scientific Baccalaureate, Life and Earth Sciences option, Mathematics specialization</li>
-      </ul>
-    </section>
+    <a class="card" href="experience.html">
+      <h3>Experience</h3>
+      <p>Research and professional experience.</p>
+    </a>
 
-    <!-- EXPERIENCE -->
-    <section>
-      <h2>Experience</h2>
-      <div class="rule"></div>
+    <a class="card" href="publications.html">
+      <h3>Publications</h3>
+      <p>Journal papers, conferences and reports.</p>
+    </a>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Postdoctoral Researcher (current position)</div>
-          <div class="entry-date">2025</div>
-        </div>
-        <div class="entry-sub">
-          <div>Laboratoire d'informatique, de robotique et de microélectronique de Montpellier (LIRMM)</div>
-          <div></div>
-        </div>
-        <div class="entry-body">
-          Study and control of the stiffness of cable-driven parallel robots.
-        </div>
-      </div>
+  </section>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">PhD</div>
-          <div class="entry-date">2021–2024</div>
-        </div>
-        <div class="entry-sub">
-          <div>Laboratoire des Sciences du Numérique de Nantes (LS2N)</div>
-          <div></div>
-        </div>
-        <div class="entry-body">
-          <div><em>Title:</em> Implementation of an underactuated tendon-driven tensegrity robot inspired by the bird neck</div>
-          <div>Study of the design and control (position and force) of an underactuated robotic arm built with antiparallelogram joints.</div>
-        </div>
-      </div>
+</main>
 
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Master’s thesis internship</div>
-          <div class="entry-date">2021</div>
-        </div>
-        <div class="entry-sub">
-          <div>Laboratoire des Sciences du Numérique de Nantes (LS2N)</div>
-          <div></div>
-        </div>
-        <div class="entry-body">
-          Implementation of control laws for the walking of the humanoid robot Talos.
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Industrial project</div>
-          <div class="entry-date">2020</div>
-        </div>
-        <div class="entry-sub">
-          <div>Proteor</div>
-          <div></div>
-        </div>
-        <div class="entry-body">
-          Development of an energy recovery system for a mechatronic knee–ankle–foot prosthesis, within the framework of the Agrégation competition.
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Master’s internship (1st year)</div>
-          <div class="entry-date">2019</div>
-        </div>
-        <div class="entry-sub">
-          <div>Laboratoire Angevin de Recherche en Ingénierie des Systèmes (LARIS)</div>
-          <div></div>
-        </div>
-        <div class="entry-body">
-          Computation of joint torques of a human biomechanical model for various movements using the Newton–Euler algorithm and Simscape simulations under Matlab.
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-head">
-          <div class="entry-title">Bachelor’s internship (3rd year)</div>
-          <div class="entry-date">2018</div>
-        </div>
-        <div class="entry-sub">
-          <div>Laboratoire d'Analyse et d'Architecture des Systèmes (LAAS), Toulouse</div>
-          <div></div>
-        </div>
-        <div class="entry-body">
-          Development of Gazebo packages under ROS for humanoid robot trajectory simulation and control law design.
-          Implementation of an interface between the Stack-of-Tasks control architecture and the robot.
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-      <h2>Skills</h2>
-      <div class="rule"></div>
-      <ul>
-        <li>Robot control</li>
-        <li>Mechanical and electronic modeling</li>
-        <li>Applied mathematics</li>
-        <li>Proficiency with software: SolidWorks, Adams, Comsol Multiphysics, Simulink (Matlab)</li>
-        <li>Proficiency in programming languages: Python, Matlab, C and C++</li>
-        <li>Proficiency with ROS (Robot Operating System)</li>
-        <li>Fluent in English, good level in Spanish</li>
-      </ul>
-    </section>
-
-    <!-- ACTIVITIES -->
-    <section>
-      <h2>Activities</h2>
-      <div class="rule"></div>
-
-      <ul>
-        <li><strong>2022–2023 :</strong> Vice-president of the association of young researchers in Numerical Science of Nantes (LOGIN).
-          Organization of events for LS2N young researchers such as:
-          <ul>
-            <li>An annual welcome day for new PhD students.</li>
-            <li>PhD half-hour (monthly): presentation of a PhD student’s work to other young researchers.</li>
-            <li>Organization of various social events among young researchers.</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-    <!-- PUBLICATIONS -->
-<section class="pubs">
-  <h2>Publications</h2>
-  <div class="rule"></div>
-
-  <h3>International Journal Articles</h3>
-
-  <ol class="bib">
-    <li>
-      Vimalesh Muralidharan, <strong>Nicolas Testard</strong>, Christine Chevallereau, Anick Abourachid, and Philippe Wenger,
-      “Variable stiffness and antagonist actuation for cable-driven manipulators inspired by the bird neck,”
-      <em>Journal of Mechanisms and Robotics</em>, vol. 15, no. 3, p. 035002, 2023.
-      <a class="link" href="https://hal.science/hal-04087448/" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Control analysis of an underactuated bio-inspired robot,”
-      <em>Robotica</em>, vol. 42, no. 12, pp. 4161–4185, 2024.
-      <a class="link" href="https://hal.science/hal-04710904" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Comparison analysis of bio-inspired tendon-driven manipulators based on their tension-feasible workspace,”
-      <em>Journal of Mechanisms and Robotics</em>, vol. 17, no. 1, p. 010907, 2025.
-      <a class="link" href="https://hal.science/hal-04643098/" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-  </ol>
-
-  <h3>International Conference Papers</h3>
-
-  <ol class="bib">
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Comparison of Explicit and Implicit Numerical Integrations for a Tendon-Driven Robot,” in
-      <em>Cable-Driven Parallel Robots</em>, Proceedings of the 6th International Conference on Cable-Driven Parallel Robots,
-      pp. 234–245, 2023.
-      <a class="link" href="https://hal.science/hal-04121447" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Comparison analysis of tendon-driven manipulators based on their wrench feasible workspace,” in
-      <em>Cable-Driven Parallel Robots</em>, Proceedings of the 6th International Conference on Cable-Driven Parallel Robots,
-      pp. 121–133, 2023.
-      <a class="link" href="https://hal.science/hal-04121450/" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      Vimalesh Muralidharan, Christine Chevallereau, Philippe Wenger, and <strong>N. J. S. Testard</strong>,
-      “Effect of antagonistic cable actuation on the stiffness of symmetric four-bar mechanisms,” in
-      <em>Cable-Driven Parallel Robots</em>, Proceedings of the 6th International Conference on Cable-Driven Parallel Robots,
-      pp. 332–343, 2023.
-      <a class="link" href="https://hal.science/hal-04118861/" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Dynamics and computed torque control stability of an under-actuated tendon-driven manipulator,” in
-      <em>IFToMM World Congress on Mechanism and Machine Science</em>, pp. 332–341, 2023.
-      <a class="link" href="https://hal.science/hal-04311457" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-  </ol>
-
-  <h3>National Conference Papers</h3>
-
-  <ol class="bib">
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Control in the operational space of a redundant and under-actuated tensegrity robot,” in
-      <em>25ème Congrès Français de Mécanique</em>, Aug. 2022.
-      <a class="link" href="https://hal.science/hal-03797431" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-  </ol>
-
-  <h3>Thesis and Technical Reports</h3>
-
-  <ol class="bib">
-    <li>
-      <strong>Nicolas Testard</strong>, <em>Implementation of a tendon-driven, underactuated tensegrity robot inspired by the bird neck</em>,
-      Ph.D. dissertation, Ecole Centrale de Nantes, 2024.
-      <a class="link" href="https://theses.hal.science/tel-05101640" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      <strong>Nicolas J. S. Testard</strong>, Christine Chevallereau, and Philippe Wenger,
-      “Static analysis of an under-actuated bio-inspired robot,” Tech. Rep., LS2N, Jan. 2024.
-      <a class="link" href="https://hal.science/hal-04391834" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-
-    <li>
-      <strong>Nicolas Testard</strong>, “Control of the humanoid robot TALOS during walking,” Master’s thesis,
-      Ecole Centrale de Nantes, 2021.
-      <a class="link" href="https://hal-emse.ccsd.cnrs.fr/EC-NANTES/dumas-05463857v1" target="_blank" rel="noreferrer">HAL</a>
-    </li>
-  </ol>
-</section>
-
-<style>
-  /* IEEE-like bibliography look */
-  .pubs h3{ margin: 14px 0 6px; font-size: 16px; }
-  .bib{
-    margin: 8px 0 0;
-    padding-left: 22px; /* number indentation */
-  }
-  .bib li{
-    margin: 10px 0;
-  }
-  .bib li::marker{
-    font-weight: 700;
-  }
-  .pubs .link{
-    margin-left: 10px;
-    font-size: 13px;
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px dotted #999;
-  }
-  .pubs .link:hover{
-    border-bottom-style: solid;
-  }
-</style>
-
-
-  </main>
 </body>
 </html>
