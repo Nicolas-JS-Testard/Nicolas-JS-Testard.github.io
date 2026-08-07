@@ -31,16 +31,12 @@
    ========================================================= */
 
 * {
-
   box-sizing: border-box;
-
 }
 
 
 html {
-
   scroll-behavior: smooth;
-
 }
 
 
@@ -77,7 +73,8 @@ a {
     color 0.2s ease,
     background 0.2s ease,
     border-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
 }
 
@@ -165,7 +162,7 @@ a {
 
   background: var(--accent);
 
-  border-radius: 2px;
+  border-radius: 3px;
 
 }
 
@@ -225,7 +222,7 @@ a {
 
   gap: 70px;
 
-  padding: 45px 0 70px;
+  padding: 45px 0 65px;
 
   border-bottom: 1px solid var(--border);
 
@@ -272,11 +269,14 @@ a {
 }
 
 
+
+/* =========================================================
+   EMAIL
+   ========================================================= */
+
 .email {
 
   margin: 0;
-
-  color: var(--muted);
 
   font-size: 15px;
 
@@ -332,10 +332,6 @@ a {
    SOCIAL / ACADEMIC LINKS
    ========================================================= */
 
-/* =========================================================
-   SOCIAL / ACADEMIC LINKS
-   ========================================================= */
-
 .social-links {
 
   display: flex;
@@ -355,13 +351,17 @@ a {
 
   align-items: center;
 
+  justify-content: center;
+
   gap: 8px;
+
+  min-height: 39px;
 
   padding: 8px 13px;
 
   background: var(--surface);
 
-  color: var(--accent);
+  color: #37424d;
 
   border: 1px solid var(--border);
 
@@ -374,7 +374,7 @@ a {
   font-weight: 600;
 
   box-shadow:
-    0 2px 5px rgba(20, 35, 50, 0.025);
+    0 2px 6px rgba(20, 35, 50, 0.035);
 
 }
 
@@ -383,18 +383,23 @@ a {
 
   transform: translateY(-2px);
 
-  background: var(--accent-light);
+  background: #ffffff;
 
-  border-color: var(--accent);
+  border-color: #bcc9d1;
+
+  box-shadow:
+    0 5px 13px rgba(20, 35, 50, 0.09);
 
 }
 
 
 .social-icon {
 
-  width: 18px;
+  display: block;
 
-  height: 18px;
+  width: 20px;
+
+  height: 20px;
 
   object-fit: contain;
 
@@ -577,7 +582,7 @@ section h3 {
 
 .card:hover .card-arrow {
 
-  transform: translateX(4px);
+  transform: translateX(5px);
 
 }
 
@@ -858,6 +863,13 @@ footer {
 }
 
 
+footer p {
+
+  margin: 0;
+
+}
+
+
 
 /* =========================================================
    MOBILE
@@ -940,9 +952,18 @@ footer {
 
   .social-links a {
 
-    padding: 6px 10px;
+    padding: 7px 10px;
 
     font-size: 12px;
+
+  }
+
+
+  .social-icon {
+
+    width: 18px;
+
+    height: 18px;
 
   }
 
@@ -1048,6 +1069,13 @@ footer {
 
   }
 
+
+  .social-links a {
+
+    padding: 7px 9px;
+
+  }
+
 }
 
 
@@ -1089,6 +1117,5 @@ footer {
     box-shadow: none;
 
   }
-
 
 }
