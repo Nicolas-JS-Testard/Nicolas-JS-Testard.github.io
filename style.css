@@ -1,31 +1,55 @@
 /* =========================================================
-   GLOBAL
+   VARIABLES
    ========================================================= */
 
 :root {
+
   --background: #f7f8fa;
+
   --surface: #ffffff;
+
   --text: #1c2430;
-  --muted: #647080;
+
+  --muted: #66717f;
+
   --accent: #244c66;
+
   --accent-light: #eaf1f5;
+
   --border: #dfe4e8;
 
   --max-width: 1050px;
+
   --radius: 12px;
+
 }
+
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
+
   box-sizing: border-box;
+
 }
+
 
 html {
+
   scroll-behavior: smooth;
+
 }
 
+
 body {
+
   margin: 0;
+
   background: var(--background);
+
   color: var(--text);
 
   font-family:
@@ -38,7 +62,25 @@ body {
     sans-serif;
 
   line-height: 1.65;
+
 }
+
+
+
+/* =========================================================
+   GENERAL LINKS
+   ========================================================= */
+
+a {
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
 
 
 /* =========================================================
@@ -46,60 +88,87 @@ body {
    ========================================================= */
 
 .navbar {
+
   position: sticky;
+
   top: 0;
+
   z-index: 100;
 
   display: flex;
+
   justify-content: flex-end;
+
   align-items: center;
 
   gap: 30px;
 
-  padding: 20px max(25px, calc((100% - var(--max-width)) / 2));
+  padding:
+    20px
+    max(25px, calc((100% - var(--max-width)) / 2));
 
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
 
   border-bottom: 1px solid var(--border);
+
 }
 
+
 .navbar a {
+
   position: relative;
 
   color: var(--muted);
+
   text-decoration: none;
 
   font-size: 15px;
+
   font-weight: 500;
 
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
 }
+
 
 .navbar a:hover {
+
   color: var(--accent);
+
 }
+
 
 .navbar a.active {
+
   color: var(--accent);
+
   font-weight: 650;
+
 }
 
+
 .navbar a.active::after {
+
   content: "";
 
   position: absolute;
+
   left: 0;
+
   right: 0;
+
   bottom: -8px;
 
   height: 2px;
 
   background: var(--accent);
+
   border-radius: 2px;
+
 }
+
 
 
 /* =========================================================
@@ -107,77 +176,141 @@ body {
    ========================================================= */
 
 .page {
+
+  width: 100%;
+
   max-width: var(--max-width);
 
   margin: 0 auto;
 
   padding: 65px 30px 80px;
+
 }
+
 
 .page > h1 {
+
   margin-top: 0;
+
   margin-bottom: 40px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 42px;
+
   font-weight: 500;
 
+  line-height: 1.15;
+
   letter-spacing: -0.02em;
+
 }
+
 
 
 /* =========================================================
-   HOME / HERO
+   HOME HERO
    ========================================================= */
 
 .hero {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
   gap: 70px;
 
-  padding: 55px 0 70px;
+  padding: 45px 0 70px;
+
+  border-bottom: 1px solid var(--border);
+
 }
+
+
+.hero-text {
+
+  flex: 1;
+
+}
+
 
 .hero h1 {
+
   margin: 0 0 10px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: clamp(42px, 6vw, 64px);
+
   font-weight: 500;
 
-  letter-spacing: -0.035em;
   line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
 }
 
+
 .subtitle {
-  margin: 0 0 18px;
+
+  margin: 0 0 12px;
 
   color: var(--accent);
 
   font-size: 21px;
+
   font-weight: 500;
+
 }
 
-.hero p {
+
+.email {
+
+  margin: 0;
+
   color: var(--muted);
+
+  font-size: 15px;
+
 }
 
-.hero a {
-  color: var(--text);
+
+.email a {
+
+  color: var(--muted);
+
   text-decoration: none;
+
 }
 
-.hero a:hover {
+
+.email a:hover {
+
   color: var(--accent);
+
+  text-decoration: underline;
+
 }
+
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
 
 .photo {
-  width: 175px;
-  height: 175px;
+
+  width: 180px;
+
+  height: 180px;
 
   flex-shrink: 0;
 
@@ -190,7 +323,68 @@ body {
   box-shadow:
     0 10px 30px rgba(30, 45, 60, 0.12),
     0 0 0 1px var(--border);
+
 }
+
+
+
+/* =========================================================
+   SOCIAL / ACADEMIC LINKS
+   ========================================================= */
+
+.social-links {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 22px;
+
+}
+
+
+.social-links a {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 7px 13px;
+
+  background: var(--surface);
+
+  color: var(--accent);
+
+  border: 1px solid var(--border);
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 2px 5px rgba(20, 35, 50, 0.025);
+
+}
+
+
+.social-links a:hover {
+
+  transform: translateY(-2px);
+
+  background: var(--accent-light);
+
+  border-color: var(--accent);
+
+}
+
 
 
 /* =========================================================
@@ -198,26 +392,65 @@ body {
    ========================================================= */
 
 section {
+
   margin: 50px 0;
+
 }
 
+
 section h2 {
+
   margin: 0 0 22px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 28px;
+
   font-weight: 500;
 
   letter-spacing: -0.01em;
+
 }
 
+
 section h3 {
+
   margin-top: 35px;
 
   font-size: 20px;
+
   font-weight: 650;
+
 }
+
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+
+  max-width: 760px;
+
+}
+
+
+.about p {
+
+  margin-bottom: 0;
+
+  color: #46515e;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+}
+
 
 
 /* =========================================================
@@ -225,6 +458,7 @@ section h3 {
    ========================================================= */
 
 .cards {
+
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
@@ -232,55 +466,104 @@ section h3 {
   gap: 20px;
 
   margin-top: 50px;
+
 }
 
+
 .card {
+
+  position: relative;
+
   display: block;
+
+  min-height: 175px;
 
   padding: 28px;
 
   background: var(--surface);
 
   color: var(--text);
+
   text-decoration: none;
 
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
 
-  box-shadow: 0 3px 12px rgba(20, 35, 50, 0.04);
+  box-shadow:
+    0 3px 12px rgba(20, 35, 50, 0.04);
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+  overflow: hidden;
+
 }
+
 
 .card:hover {
+
   transform: translateY(-5px);
 
-  border-color: #c4d0d7;
+  border-color: #b9c9d2;
 
-  box-shadow: 0 12px 30px rgba(20, 35, 50, 0.09);
+  box-shadow:
+    0 14px 32px rgba(20, 35, 50, 0.09);
+
 }
 
+
 .card h3 {
+
   margin: 0 0 10px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: 22px;
+  font-size: 23px;
+
   font-weight: 500;
 
   color: var(--accent);
+
 }
 
+
 .card p {
+
+  max-width: 230px;
+
   margin: 0;
 
   color: var(--muted);
 
   font-size: 15px;
+
 }
+
+
+.card-arrow {
+
+  position: absolute;
+
+  right: 24px;
+
+  bottom: 18px;
+
+  color: var(--accent);
+
+  font-size: 23px;
+
+  transition: transform 0.2s ease;
+
+}
+
+
+.card:hover .card-arrow {
+
+  transform: translateX(4px);
+
+}
+
 
 
 /* =========================================================
@@ -288,33 +571,41 @@ section h3 {
    ========================================================= */
 
 .timeline {
+
   list-style: none;
 
   margin: 0;
+
   padding: 0 0 0 25px;
 
   border-left: 2px solid var(--border);
+
 }
 
+
 .timeline li {
+
   position: relative;
 
   margin: 0 0 20px;
 
   padding: 5px 0 20px 25px;
 
-  background: transparent;
 }
 
+
 .timeline li::before {
+
   content: "";
 
   position: absolute;
 
   left: -32px;
+
   top: 11px;
 
   width: 12px;
+
   height: 12px;
 
   background: var(--accent);
@@ -322,11 +613,16 @@ section h3 {
   border: 4px solid var(--background);
 
   border-radius: 50%;
+
 }
 
+
 .timeline strong {
+
   color: var(--accent);
+
 }
+
 
 
 /* =========================================================
@@ -334,6 +630,7 @@ section h3 {
    ========================================================= */
 
 .entry {
+
   margin-bottom: 20px;
 
   padding: 25px 28px;
@@ -341,39 +638,61 @@ section h3 {
   background: var(--surface);
 
   border: 1px solid var(--border);
+
   border-radius: var(--radius);
 
-  box-shadow: 0 3px 12px rgba(20, 35, 50, 0.035);
+  box-shadow:
+    0 3px 12px rgba(20, 35, 50, 0.035);
+
 }
 
+
 .entry-head {
+
   display: flex;
+
   justify-content: space-between;
+
+  align-items: baseline;
 
   gap: 30px;
 
   margin-bottom: 5px;
+
 }
+
 
 .entry-head strong:first-child {
-  font-size: 18px;
 
   color: var(--text);
+
+  font-size: 18px;
+
 }
 
+
 .entry-head strong:last-child {
+
   color: var(--accent);
 
   white-space: nowrap;
+
 }
+
 
 .entry em {
+
   color: var(--muted);
+
 }
 
+
 .entry p {
+
   margin-bottom: 0;
+
 }
+
 
 
 /* =========================================================
@@ -381,52 +700,97 @@ section h3 {
    ========================================================= */
 
 .pubs h3 {
+
   margin-top: 45px;
+
   margin-bottom: 18px;
 
   padding-bottom: 10px;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 22px;
+
   font-weight: 500;
 
   color: var(--accent);
 
   border-bottom: 1px solid var(--border);
+
 }
+
+
+#hal-status {
+
+  margin-bottom: 30px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+}
+
 
 .bib {
+
   margin: 0;
+
   padding-left: 38px;
+
 }
 
+
 .bib li {
+
   margin-bottom: 18px;
 
   padding: 5px 0 18px 8px;
 
-  border-bottom: 1px solid #ebedef;
+  border-bottom: 1px solid #e8ecef;
+
 }
+
 
 .bib li:last-child {
+
   border-bottom: none;
+
 }
+
 
 .bib li::marker {
+
   color: var(--accent);
+
   font-weight: 700;
+
 }
+
 
 .bib strong {
+
   color: var(--text);
+
 }
+
 
 .bib em {
+
   color: #3d4650;
+
 }
 
+
+
+/* =========================================================
+   HAL / DOI BUTTONS
+   ========================================================= */
+
 .link {
+
   display: inline-block;
 
   margin-left: 8px;
@@ -440,25 +804,42 @@ section h3 {
   text-decoration: none;
 
   font-size: 12px;
+
   font-weight: 650;
 
   border-radius: 5px;
 
-  transition: background 0.2s ease;
 }
 
+
 .link:hover {
+
   background: #dae7ed;
+
 }
+
 
 
 /* =========================================================
-   GENERAL LINKS
+   FOOTER
    ========================================================= */
 
-a {
-  transition: color 0.2s ease;
+footer {
+
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  padding: 25px 30px 35px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  border-top: 1px solid var(--border);
+
 }
+
 
 
 /* =========================================================
@@ -467,58 +848,230 @@ a {
 
 @media (max-width: 750px) {
 
+
   .navbar {
+
     justify-content: center;
 
-    gap: 18px;
+    gap: 17px;
 
     padding: 17px 15px;
 
     flex-wrap: wrap;
+
   }
+
 
   .navbar a {
+
     font-size: 14px;
+
   }
+
 
   .page {
+
     padding: 40px 20px 60px;
+
   }
 
+
   .hero {
+
     flex-direction: column-reverse;
+
     align-items: flex-start;
 
     gap: 35px;
 
-    padding-top: 25px;
+    padding-top: 20px;
+
+    padding-bottom: 50px;
+
   }
+
 
   .photo {
-    width: 135px;
-    height: 135px;
+
+    width: 140px;
+
+    height: 140px;
+
   }
+
 
   .hero h1 {
+
     font-size: 42px;
+
   }
+
+
+  .subtitle {
+
+    font-size: 19px;
+
+  }
+
+
+  .social-links {
+
+    gap: 8px;
+
+  }
+
+
+  .social-links a {
+
+    padding: 6px 10px;
+
+    font-size: 12px;
+
+  }
+
 
   .cards {
+
     grid-template-columns: 1fr;
+
   }
+
+
+  .card {
+
+    min-height: 150px;
+
+  }
+
 
   .entry {
+
     padding: 20px;
+
   }
+
 
   .entry-head {
+
     flex-direction: column;
 
+    align-items: flex-start;
+
     gap: 2px;
+
   }
 
+
   .page > h1 {
+
     font-size: 35px;
+
   }
+
+
+  .bib {
+
+    padding-left: 30px;
+
+  }
+
+
+  footer {
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+
+  .navbar {
+
+    gap: 12px;
+
+  }
+
+
+  .navbar a {
+
+    font-size: 13px;
+
+  }
+
+
+  .hero h1 {
+
+    font-size: 36px;
+
+  }
+
+
+  .photo {
+
+    width: 120px;
+
+    height: 120px;
+
+  }
+
+
+  .social-links {
+
+    width: 100%;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+
+  .navbar,
+  footer {
+
+    display: none;
+
+  }
+
+
+  body {
+
+    background: white;
+
+  }
+
+
+  .page {
+
+    max-width: none;
+
+    padding: 0;
+
+  }
+
+
+  .entry,
+  .card {
+
+    box-shadow: none;
+
+  }
+
 
 }
