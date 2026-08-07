@@ -332,6 +332,10 @@ a {
    SOCIAL / ACADEMIC LINKS
    ========================================================= */
 
+/* =========================================================
+   SOCIAL / ACADEMIC LINKS
+   ========================================================= */
+
 .social-links {
 
   display: flex;
@@ -351,9 +355,9 @@ a {
 
   align-items: center;
 
-  justify-content: center;
+  gap: 8px;
 
-  padding: 7px 13px;
+  padding: 8px 13px;
 
   background: var(--surface);
 
@@ -361,7 +365,7 @@ a {
 
   border: 1px solid var(--border);
 
-  border-radius: 7px;
+  border-radius: 8px;
 
   text-decoration: none;
 
@@ -382,6 +386,19 @@ a {
   background: var(--accent-light);
 
   border-color: var(--accent);
+
+}
+
+
+.social-icon {
+
+  width: 18px;
+
+  height: 18px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
 
 }
 
