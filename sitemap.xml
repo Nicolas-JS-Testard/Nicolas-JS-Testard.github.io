@@ -2,20 +2,14 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://nicolas-js-testard.github.io/</loc>
-  </url>
+  <url><loc>https://nicolas-js-testard.github.io/</loc></url>
+  <url><loc>https://nicolas-js-testard.github.io/education.html</loc></url>
+  <url><loc>https://nicolas-js-testard.github.io/experience.html</loc></url>
+  <url><loc>https://nicolas-js-testard.github.io/publications.html</loc></url>
 
-  <url>
-    <loc>https://nicolas-js-testard.github.io/education.html</loc>
-  </url>
-
-  <url>
-    <loc>https://nicolas-js-testard.github.io/experience.html</loc>
-  </url>
-
-  <url>
-    <loc>https://nicolas-js-testard.github.io/publications.html</loc>
-  </url>
+  <url><loc>https://nicolas-js-testard.github.io/fr/</loc></url>
+  <url><loc>https://nicolas-js-testard.github.io/fr/education.html</loc></url>
+  <url><loc>https://nicolas-js-testard.github.io/fr/experience.html</loc></url>
+  <url><loc>https://nicolas-js-testard.github.io/fr/publications.html</loc></url>
 
 </urlset>

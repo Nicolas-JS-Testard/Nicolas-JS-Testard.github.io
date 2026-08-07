@@ -1,0 +1,23 @@
+Fichiers à mettre sur GitHub
+==============================
+
+À la racine du dépôt :
+- index.html
+- education.html
+- experience.html
+- publications.html
+- style.css
+- sitemap.xml
+- robots.txt
+- pdp.jpg  (garder votre fichier existant)
+
+Créer un dossier :
+- fr/
+
+Dans fr/ :
+- index.html
+- education.html
+- experience.html
+- publications.html
+
+Le fichier pdp.jpg n'est pas inclus ici : conservez celui déjà présent sur votre dépôt.
