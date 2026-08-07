@@ -209,7 +209,7 @@ a {
 
 
 /* =========================================================
-   HOME HERO
+   HERO
    ========================================================= */
 
 .hero {
@@ -285,6 +285,12 @@ a {
 
 .email a {
 
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
   color: var(--muted);
 
   text-decoration: none;
@@ -355,7 +361,7 @@ a {
 
   gap: 8px;
 
-  min-height: 39px;
+  min-height: 40px;
 
   padding: 8px 13px;
 
@@ -392,6 +398,55 @@ a {
 
 }
 
+
+
+/* =========================================================
+   SOCIAL LOGOS
+   ========================================================= */
+
+.social-brand {
+
+  width: 21px;
+
+  text-align: center;
+
+  flex-shrink: 0;
+
+  font-size: 21px;
+
+  line-height: 1;
+
+}
+
+
+/* LinkedIn official blue */
+
+.linkedin-icon {
+
+  color: #0A66C2;
+
+}
+
+
+/* ResearchGate */
+
+.researchgate-icon {
+
+  color: #00CCBB;
+
+}
+
+
+/* ORCID */
+
+.orcid-icon {
+
+  color: #A6CE39;
+
+}
+
+
+/* Google Scholar */
 
 .social-icon {
 
@@ -955,6 +1010,15 @@ footer p {
     padding: 7px 10px;
 
     font-size: 12px;
+
+  }
+
+
+  .social-brand {
+
+    width: 19px;
+
+    font-size: 19px;
 
   }
 
