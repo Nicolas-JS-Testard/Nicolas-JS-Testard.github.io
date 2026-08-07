@@ -1,0 +1,22 @@
+VERSION MISE À JOUR — DRAPEAUX EN / FR
+
+Fichiers à remplacer sur GitHub :
+- index.html
+- education.html
+- experience.html
+- publications.html
+- style.css
+- fr/index.html
+- fr/education.html
+- fr/experience.html
+- fr/publications.html
+
+Les fichiers suivants sont inclus mais inchangés :
+- robots.txt
+- sitemap.xml
+- pdp.jpg
+
+Le sélecteur de langue affiche maintenant :
+🇬🇧 EN / 🇫🇷 FR
+
+La langue active reste en gras.
