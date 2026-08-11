@@ -91,3 +91,11 @@ Chaque activité contient maintenant :
 - <div class="activity-card-body"> pour le contenu
 
 Le CSS est adapté à cette nouvelle structure.
+
+
+MISE À JOUR — YOUTUBE
+=====================
+Ajout du profil YouTube aux pages d'accueil anglaise et française :
+https://www.youtube.com/@avineckresearcher
+
+L'icône utilise Font Awesome et la couleur officielle YouTube.
