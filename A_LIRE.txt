@@ -29,3 +29,19 @@ Les enseignements sont regroupés par thème :
 - Encadrement et projets étudiants
 
 Les volumes détaillés par CM / TD / TP sont conservés.
+
+
+CORRECTION DES STAGES DE FIN DE MASTER
+======================================
+- La section s'appelle maintenant « Stages de fin de Master »
+  / « Master's Final-Year Internships ».
+- Premier stage : 2021–2022.
+- Deuxième stage : 2022–2023.
+- Les heures des deux stages ne sont plus affichées individuellement.
+- Elles restent comptabilisées dans les bilans annuels.
+- Bilans corrigés :
+  2021–2022 : 69 h EqTD
+  2022–2023 : 66 h EqTD
+  2023–2024 : 59 h EqTD
+  Total : 194 h EqTD
+- Les sujets détaillés des deux stages ont été ajoutés.
