@@ -68,3 +68,13 @@ Association Sportive de l'École Normale Supérieure de Rennes (BDS ENS Rennes)
 
 Anglais :
 Sports Association of École Normale Supérieure de Rennes (BDS ENS Rennes)
+
+
+MISE À JOUR VISUELLE — ACTIVITÉS
+================================
+- chaque activité est maintenant présentée dans une carte plus marquée ;
+- les années sont affichées dans un badge bleu plus visible ;
+- les catégories sont affichées dans un badge séparé ;
+- les titres sont plus grands ;
+- l'adresse de la JJCR est mise en évidence ;
+- un léger effet au survol renforce la lisibilité.

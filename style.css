@@ -1491,60 +1491,113 @@ footer p {
 .activities-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
   margin: 0;
 }
 
 .activity-card {
-  padding: 27px 30px;
+  position: relative;
+
+  padding: 30px 32px;
+
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 3px 12px rgba(20, 35, 50, 0.035);
+
+  border: 1px solid #d5dde3;
+  border-radius: 14px;
+
+  box-shadow:
+    0 7px 22px rgba(20, 35, 50, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #bccbd4;
+
+  box-shadow:
+    0 13px 30px rgba(20, 35, 50, 0.10);
 }
 
 .activity-featured {
-  border-left: 4px solid var(--accent);
+  border-left: 5px solid var(--accent);
 }
 
 .activity-meta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 9px;
-  margin-bottom: 10px;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
 }
 
 .activity-year {
-  color: var(--accent);
-  font-size: 14px;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+
+  padding: 6px 12px;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1;
 }
 
 .activity-type {
-  display: inline-block;
-  padding: 3px 8px;
-  color: var(--muted);
-  background: #f4f6f8;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 34px;
+
+  padding: 6px 12px;
+
+  background: var(--accent-light);
+  color: var(--accent);
+
+  border: 1px solid #cbd9e1;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.15;
 }
 
 .activity-card h2 {
-  margin: 0 0 9px;
+  margin: 0 0 12px;
+
   color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
   font-weight: 500;
   line-height: 1.35;
 }
 
 .activity-card p {
   max-width: 880px;
+
   margin: 10px 0 0;
+
   color: #46515e;
+
+  font-size: 15.5px;
   line-height: 1.75;
 }
 
@@ -1553,20 +1606,42 @@ footer p {
   color: var(--muted) !important;
 }
 
+.activity-location {
+  margin-top: 4px !important;
+
+  padding: 10px 13px;
+
+  background: #f7f9fa;
+
+  border-left: 3px solid var(--accent-light);
+  border-radius: 6px;
+}
+
 .activity-location strong {
   color: var(--accent);
 }
 
+.activity-organization {
+  margin-top: 4px !important;
+
+  font-size: 14.5px !important;
+  font-style: italic;
+}
+
 .activity-bullets {
   max-width: 850px;
-  margin: 14px 0 0;
-  padding-left: 23px;
+
+  margin: 16px 0 0;
+  padding-left: 24px;
+
   color: #46515e;
 }
 
 .activity-bullets li {
-  margin-bottom: 8px;
-  padding-left: 4px;
+  margin-bottom: 9px;
+  padding-left: 5px;
+
+  line-height: 1.65;
 }
 
 .activity-bullets li:last-child {
@@ -1576,19 +1651,26 @@ footer p {
 @media (max-width: 750px) {
 
   .activity-card {
-    padding: 22px;
+    padding: 24px;
   }
 
   .activity-card h2 {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .activities-intro {
     font-size: 16px;
   }
 
-}
+  .activity-year {
+    font-size: 14px;
+  }
 
+  .activity-type {
+    font-size: 12px;
+  }
+
+}
 
 /* =========================================================
    LANGUAGE SWITCH
