@@ -78,3 +78,16 @@ MISE À JOUR VISUELLE — ACTIVITÉS
 - les titres sont plus grands ;
 - l'adresse de la JJCR est mise en évidence ;
 - un léger effet au survol renforce la lisibilité.
+
+
+CORRECTION STRUCTURE HTML — ACTIVITÉS
+=====================================
+Cette version modifie réellement activities.html et fr/activities.html.
+
+Chaque activité contient maintenant :
+- <article class="activity-card">
+- <header class="activity-card-header">
+- un bloc .activity-meta avec année et catégorie
+- <div class="activity-card-body"> pour le contenu
+
+Le CSS est adapté à cette nouvelle structure.

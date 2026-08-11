@@ -1483,30 +1483,37 @@ footer p {
 .activities-intro {
   max-width: 790px;
   margin: -15px 0 42px;
+
   color: #46515e;
+
   font-size: 17px;
   line-height: 1.8;
 }
 
 .activities-list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 26px;
+
   margin: 0;
 }
 
-.activity-card {
-  position: relative;
 
-  padding: 30px 32px;
+/* ---------------------------------------------------------
+   Main activity card
+   --------------------------------------------------------- */
+
+.activity-card {
+  overflow: hidden;
 
   background: var(--surface);
 
   border: 1px solid #d5dde3;
-  border-radius: 14px;
+  border-radius: 15px;
 
   box-shadow:
-    0 7px 22px rgba(20, 35, 50, 0.07);
+    0 8px 24px rgba(20, 35, 50, 0.07);
 
   transition:
     transform 0.2s ease,
@@ -1517,14 +1524,32 @@ footer p {
 .activity-card:hover {
   transform: translateY(-3px);
 
-  border-color: #bccbd4;
+  border-color: #b9c8d1;
 
   box-shadow:
-    0 13px 30px rgba(20, 35, 50, 0.10);
+    0 14px 32px rgba(20, 35, 50, 0.11);
 }
 
 .activity-featured {
   border-left: 5px solid var(--accent);
+}
+
+
+/* ---------------------------------------------------------
+   Card header
+   --------------------------------------------------------- */
+
+.activity-card-header {
+  padding: 25px 30px 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfcfd 100%
+    );
+
+  border-bottom: 1px solid #e7ebee;
 }
 
 .activity-meta {
@@ -1534,7 +1559,7 @@ footer p {
 
   gap: 10px;
 
-  margin-bottom: 18px;
+  margin-bottom: 17px;
 }
 
 .activity-year {
@@ -1542,16 +1567,16 @@ footer p {
   align-items: center;
   justify-content: center;
 
-  min-height: 34px;
+  min-height: 38px;
 
-  padding: 6px 12px;
+  padding: 7px 14px;
 
   background: var(--accent);
   color: #ffffff;
 
   border-radius: 8px;
 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 750;
   line-height: 1;
 }
@@ -1560,23 +1585,23 @@ footer p {
   display: inline-flex;
   align-items: center;
 
-  min-height: 34px;
+  min-height: 38px;
 
-  padding: 6px 12px;
+  padding: 7px 13px;
 
   background: var(--accent-light);
   color: var(--accent);
 
-  border: 1px solid #cbd9e1;
+  border: 1px solid #cad9e1;
   border-radius: 8px;
 
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 650;
   line-height: 1.15;
 }
 
-.activity-card h2 {
-  margin: 0 0 12px;
+.activity-card-header h2 {
+  margin: 0;
 
   color: var(--text);
 
@@ -1590,10 +1615,19 @@ footer p {
   line-height: 1.35;
 }
 
-.activity-card p {
+
+/* ---------------------------------------------------------
+   Card body
+   --------------------------------------------------------- */
+
+.activity-card-body {
+  padding: 23px 30px 27px;
+}
+
+.activity-card-body p {
   max-width: 880px;
 
-  margin: 10px 0 0;
+  margin: 0 0 15px;
 
   color: #46515e;
 
@@ -1601,20 +1635,19 @@ footer p {
   line-height: 1.75;
 }
 
-.activity-location,
-.activity-organization {
-  color: var(--muted) !important;
+.activity-card-body p:last-child {
+  margin-bottom: 0;
 }
 
 .activity-location {
-  margin-top: 4px !important;
+  padding: 13px 16px;
 
-  padding: 10px 13px;
+  background: #f5f8fa;
 
-  background: #f7f9fa;
+  border-left: 3px solid var(--accent);
+  border-radius: 7px;
 
-  border-left: 3px solid var(--accent-light);
-  border-radius: 6px;
+  color: var(--muted) !important;
 }
 
 .activity-location strong {
@@ -1622,16 +1655,49 @@ footer p {
 }
 
 .activity-organization {
-  margin-top: 4px !important;
+  color: var(--muted) !important;
 
   font-size: 14.5px !important;
   font-style: italic;
 }
 
+
+.activity-link {
+  margin-top: 12px !important;
+}
+
+.activity-link a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 12px;
+
+  background: var(--accent-light);
+  color: var(--accent);
+
+  border: 1px solid #cad9e1;
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.activity-link a:hover {
+  background: #dce8ee;
+  border-color: #b9cbd5;
+}
+
+
+/* ---------------------------------------------------------
+   Lists
+   --------------------------------------------------------- */
+
 .activity-bullets {
   max-width: 850px;
 
-  margin: 16px 0 0;
+  margin: 15px 0 0;
   padding-left: 24px;
 
   color: #46515e;
@@ -1648,25 +1714,42 @@ footer p {
   margin-bottom: 0;
 }
 
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
 @media (max-width: 750px) {
-
-  .activity-card {
-    padding: 24px;
-  }
-
-  .activity-card h2 {
-    font-size: 22px;
-  }
 
   .activities-intro {
     font-size: 16px;
   }
 
+  .activity-card-header {
+    padding: 22px;
+  }
+
+  .activity-card-body {
+    padding: 20px 22px 23px;
+  }
+
+  .activity-card-header h2 {
+    font-size: 22px;
+  }
+
   .activity-year {
+    min-height: 34px;
+
+    padding: 6px 11px;
+
     font-size: 14px;
   }
 
   .activity-type {
+    min-height: 34px;
+
+    padding: 6px 11px;
+
     font-size: 12px;
   }
 
