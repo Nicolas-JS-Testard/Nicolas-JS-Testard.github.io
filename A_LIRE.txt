@@ -1,22 +1,31 @@
-VERSION MISE À JOUR — DRAPEAUX EN / FR
+MISE À JOUR — PAGE ENSEIGNEMENT / TEACHING
+================================================
 
-Fichiers à remplacer sur GitHub :
+Nouveaux fichiers :
+- teaching.html
+- fr/teaching.html
+
+Fichiers modifiés :
 - index.html
 - education.html
 - experience.html
 - publications.html
-- style.css
 - fr/index.html
 - fr/education.html
 - fr/experience.html
 - fr/publications.html
-
-Les fichiers suivants sont inclus mais inchangés :
-- robots.txt
+- style.css
 - sitemap.xml
-- pdp.jpg
 
-Le sélecteur de langue affiche maintenant :
-🇬🇧 EN / 🇫🇷 FR
+La page Teaching / Enseignement présente :
+- 2021–2022 : 69 h EqTD
+- 2022–2023 : 64 h EqTD
+- 2023–2024 : 61 h EqTD
+- Total : 194 h EqTD
 
-La langue active reste en gras.
+Les enseignements sont regroupés par thème :
+- Robotique
+- Systèmes embarqués
+- Encadrement et projets étudiants
+
+Les volumes détaillés par CM / TD / TP sont conservés.

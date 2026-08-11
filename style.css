@@ -538,7 +538,7 @@ section h3 {
 
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 20px;
 
@@ -1180,6 +1180,246 @@ footer p {
 
     box-shadow: none;
 
+  }
+
+}
+
+
+/* =========================================================
+   TEACHING
+   ========================================================= */
+
+.teaching-intro {
+  max-width: 800px;
+  margin-top: 0;
+}
+
+.teaching-intro p {
+  color: #46515e;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.teaching-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0 55px;
+}
+
+.teaching-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 125px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 12px rgba(20, 35, 50, 0.04);
+}
+
+.teaching-stat .teaching-year {
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.teaching-stat strong {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.teaching-stat > span:last-child {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.teaching-stat-total {
+  background: var(--accent-light);
+  border-color: #cfdde5;
+}
+
+.teaching-category {
+  margin-top: 55px;
+}
+
+.teaching-category > h2 {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+}
+
+.course-card {
+  margin-bottom: 18px;
+  padding: 24px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 3px 12px rgba(20, 35, 50, 0.035);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 18px;
+}
+
+.course-header h3 {
+  margin: 5px 0 0;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.course-original {
+  color: var(--muted);
+  font-size: 15px;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-weight: 400;
+}
+
+.course-code {
+  display: inline-block;
+  padding: 2px 7px;
+  color: var(--accent);
+  background: var(--accent-light);
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.course-level {
+  flex-shrink: 0;
+  max-width: 250px;
+  padding: 4px 9px;
+  color: var(--muted);
+  background: #f4f6f8;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.course-years {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-year-row {
+  display: grid;
+  grid-template-columns: 115px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid #edf0f2;
+}
+
+.course-year-row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.course-year-row:last-child {
+  padding-bottom: 0;
+}
+
+.course-year-row > strong {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.course-hours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.hour-badge {
+  display: inline-block;
+  padding: 4px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hour-badge.lecture {
+  background: #eef3f6;
+  color: #294f67;
+}
+
+.hour-badge.tutorial {
+  background: #f4f3ee;
+  color: #655d3f;
+}
+
+.hour-badge.practical {
+  background: #eef6f1;
+  color: #41624d;
+}
+
+@media (max-width: 950px) and (min-width: 751px) {
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teaching-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 750px) {
+
+  .teaching-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .course-level {
+    max-width: none;
+  }
+
+  .course-year-row {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .teaching-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card {
+    padding: 20px;
   }
 
 }
