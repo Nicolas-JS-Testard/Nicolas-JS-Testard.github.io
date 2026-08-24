@@ -313,26 +313,23 @@ a {
    ========================================================= */
 
 .photo {
-
-  width: 180px;
-
-  height: 180px;
+  width: min(240px, 24vw);
+  height: auto;
+  max-height: 390px;
 
   flex-shrink: 0;
 
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center top;
 
-  border-radius: 50%;
+  border-radius: 18px;
 
   border: 5px solid var(--surface);
 
   box-shadow:
     0 10px 30px rgba(30, 45, 60, 0.12),
     0 0 0 1px var(--border);
-
 }
-
-
 
 /* =========================================================
    SOCIAL / ACADEMIC LINKS
@@ -998,9 +995,9 @@ footer p {
 
   .photo {
 
-    width: 140px;
-
-    height: 140px;
+    width: min(190px, 55vw);
+    height: auto;
+    max-height: 300px;
 
   }
 
@@ -1149,9 +1146,9 @@ footer p {
 
   .photo {
 
-    width: 120px;
-
-    height: 120px;
+    width: min(165px, 58vw);
+    height: auto;
+    max-height: 260px;
 
   }
 

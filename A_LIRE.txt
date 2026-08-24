@@ -99,3 +99,13 @@ Ajout du profil YouTube aux pages d'accueil anglaise et française :
 https://www.youtube.com/@avineckresearcher
 
 L'icône utilise Font Awesome et la couleur officielle YouTube.
+
+
+MISE À JOUR — PHOTO DE PROFIL
+=============================
+- Photo utilisée : pdp2.JPG
+- ?v=3 ajouté dans les deux index pour éviter l'ancien cache.
+- Le cadrage circulaire est supprimé.
+- Le ratio original est conservé avec height:auto.
+- object-fit: contain permet d'afficher toute la photo.
+- La taille est responsive sur ordinateur, tablette et mobile.
